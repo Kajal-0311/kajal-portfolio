@@ -1,0 +1,73 @@
+import React from 'react';
+import { portfolioData, type SkillGroup } from '../data/content';
+import { SectionHeading } from '../components/ui/SectionHeading';
+import { Card } from '../components/ui/Card';
+import { Chip } from '../components/ui/Chip';
+import { Reveal } from '../components/ui/Reveal';
+import { Code2, Brain, Sparkles, Terminal, Database, Activity } from 'lucide-react';
+
+const categoryIcons: Record<string, React.ReactNode> = {
+  'Programming Languages': <Code2 size={18} className="text-accent" />,
+  'ML & Data Science': <Brain size={18} className="text-accent-2" />,
+  'Generative AI & RAG': <Sparkles size={18} className="text-[#38E1FF]" />,
+  'Tools & Deployment': <Terminal size={18} className="text-accent" />,
+  'Databases': <Database size={18} className="text-accent-2" />,
+  'Computational Research': <Activity size={18} className="text-accent" />,
+};
+
+export const Skills: React.FC = () => {
+  return (
+    <section id="skills" className="py-24 lg:py-32 bg-bg-900 relative overflow-hidden">
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/8 rounded-full blur-[130px] pointer-events-none" />
+
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+        <Reveal yOffset={20}>
+          <SectionHeading
+            label="TOOLBOX"
+            title="TECHNICAL SKILLS & PROFICIENCIES"
+            highlight="SKILLS"
+            subtitle="Categorized technical stack based on applied engineering work in machine learning, generative retrieval, and data analysis."
+          />
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {portfolioData.skillGroups.map((group: SkillGroup, idx: number) => (
+            <Reveal key={group.category} delay={idx * 0.07} yOffset={20}>
+              <Card className="h-full flex flex-col justify-between !p-6 group">
+                <div>
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border/60">
+                    <div className="w-9 h-9 rounded-lg bg-surface-2 border border-border flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {categoryIcons[group.category] || <Code2 size={18} className="text-accent" />}
+                    </div>
+                    <h3 className="font-heading font-bold text-base text-text group-hover:text-accent transition-colors">
+                      {group.category}
+                    </h3>
+                  </div>
+
+                  {/* Chips Cluster */}
+                  <div className="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <Chip
+                        key={skill}
+                        variant="default"
+                        className="py-1 px-3 text-xs font-mono font-medium hover:border-accent hover:text-white"
+                      >
+                        {skill}
+                      </Chip>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-4 mt-4 border-t border-border/30 flex items-center justify-between text-[11px] font-mono text-text-muted">
+                  <span>{group.skills.length} competencies</span>
+                  <span className="text-accent/80">● active</span>
+                </div>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
