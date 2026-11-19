@@ -5,7 +5,6 @@ import { StatBox } from '../components/ui/StatBox';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
 import { ConcentricRings } from '../components/ui/ConcentricRings';
-import { KittyAnimation } from '../components/KittyAnimation';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
@@ -99,9 +98,6 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Persian Kittens Section Signature */}
-      <KittyAnimation sectionName="About" />
     </section>
   );
 };

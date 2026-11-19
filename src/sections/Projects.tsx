@@ -5,7 +5,6 @@ import { Card } from '../components/ui/Card';
 import { Chip } from '../components/ui/Chip';
 import { Reveal } from '../components/ui/Reveal';
 import { ProjectThumbnail } from '../components/ProjectThumbnail';
-import { KittyAnimation } from '../components/KittyAnimation';
 import { ArrowUpRight, ExternalLink, ChevronDown, ChevronUp, Layers } from 'lucide-react';
 
 export const Projects: React.FC = () => {
@@ -164,9 +163,6 @@ export const Projects: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Persian Kittens Section Signature */}
-      <KittyAnimation sectionName="Projects" />
     </section>
   );
 };

@@ -3,7 +3,6 @@ import { portfolioData, type TimelineItem } from '../data/content';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/ui/Reveal';
-import { KittyAnimation } from '../components/KittyAnimation';
 import { Briefcase, GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
 
 export const Experience: React.FC = () => {
@@ -112,9 +111,6 @@ export const Experience: React.FC = () => {
           })}
         </div>
       </div>
-
-      {/* Persian Kittens Section Signature */}
-      <KittyAnimation sectionName="Experience" />
     </section>
   );
 };
