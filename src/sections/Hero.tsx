@@ -2,6 +2,7 @@ import React from 'react';
 import { portfolioData } from '../data/content';
 import { Button } from '../components/ui/Button';
 import { ConcentricRings } from '../components/ui/ConcentricRings';
+import { KittyAnimation } from '../components/KittyAnimation';
 import { Download, Mail, ArrowRight } from 'lucide-react';
 import { FaGithub, FaLinkedinIn, FaPython } from 'react-icons/fa';
 import { SiPytorch } from 'react-icons/si';
@@ -10,7 +11,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 lg:py-32 overflow-hidden bg-[#EDE0CC]"
+      className="relative min-h-[92vh] flex flex-col justify-between pt-28 pb-6 lg:pt-32 lg:pb-8 overflow-hidden bg-[#EDE0CC]"
     >
       {/* Background radial ambient lighting - warm caramel & mocha */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B9875B]/10 rounded-full blur-[140px] pointer-events-none" />
@@ -161,6 +162,9 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Persian Kittens Section Signature */}
+      <KittyAnimation sectionName="Home" />
     </section>
   );
 };

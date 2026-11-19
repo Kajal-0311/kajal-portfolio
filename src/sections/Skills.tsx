@@ -4,6 +4,7 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
 import { Chip } from '../components/ui/Chip';
 import { Reveal } from '../components/ui/Reveal';
+import { KittyAnimation } from '../components/KittyAnimation';
 import { Code2, Brain, Sparkles, Terminal, Database, Activity } from 'lucide-react';
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -68,6 +69,9 @@ export const Skills: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Persian Kittens Section Signature */}
+      <KittyAnimation sectionName="Skills" />
     </section>
   );
 };

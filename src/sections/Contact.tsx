@@ -5,6 +5,7 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
+import { KittyAnimation } from '../components/KittyAnimation';
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ArrowUpRight } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
@@ -301,6 +302,9 @@ export const Contact: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Persian Kittens Section Signature */}
+      <KittyAnimation sectionName="Contact" />
     </section>
   );
 };

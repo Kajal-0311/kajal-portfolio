@@ -3,6 +3,7 @@ import { portfolioData, type ServiceItem } from '../data/content';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/ui/Reveal';
+import { KittyAnimation } from '../components/KittyAnimation';
 import { Brain, Sparkles, BarChart3, Layout, Check } from 'lucide-react';
 
 const iconMap = {
@@ -68,6 +69,9 @@ export const Services: React.FC = () => {
           })}
         </div>
       </div>
+
+      {/* Persian Kittens Section Signature */}
+      <KittyAnimation sectionName="What I Do" />
     </section>
   );
 };
