@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import { Heart, Sparkles, Volume2, VolumeX, RotateCcw, Play, Pause } from 'lucide-react';
 import {
   getGlobalSound,
@@ -19,6 +19,35 @@ interface KittyAnimationProps {
   sectionName?: string;
   className?: string;
 }
+
+// Sequential letter typewriter reveal: h -> e -> l -> l -> o -> space -> k -> a -> j -> u -> u -> u -> space -> 💗
+const TypewriterGreeting: React.FC<{ text: string }> = ({ text }) => {
+  const [revealedLength, setRevealedLength] = useState(1);
+
+  useEffect(() => {
+    const stepTime = 65; // ~900ms total for 14 characters
+    const interval = setInterval(() => {
+      setRevealedLength((prev) => {
+        if (prev >= text.length) {
+          clearInterval(interval);
+          return prev;
+        }
+        return prev + 1;
+      });
+    }, stepTime);
+
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return (
+    <span className="font-heading font-bold text-xs sm:text-sm tracking-wide text-[#54351F] inline-flex items-center">
+      {text.slice(0, revealedLength)}
+      {revealedLength < text.length && (
+        <span className="inline-block w-1.5 h-3.5 bg-[#B9875B] ml-0.5 animate-pulse rounded-xs" />
+      )}
+    </span>
+  );
+};
 
 // Persian Kitten SVG: Adorable, small, fluffy Persian kitten with soft beige fur
 interface PersianKittenSvgProps {
@@ -277,6 +306,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: 0.15 });
+  const shouldReduceMotion = useReducedMotion();
 
   const [phase, setPhase] = useState<KittenPhase>('fade_in');
   const [isPaused, setIsPaused] = useState(false);
@@ -284,7 +314,6 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
   const [petCount, setPetCount] = useState(0);
   const [jumpKitten, setJumpKitten] = useState<'left' | 'right' | null>(null);
   const [hearts, setHearts] = useState<Array<{ id: number; x: number; y: number }>>([]);
-  const [displayedText, setDisplayedText] = useState('');
 
   const TARGET_GREETING = 'hello kajuuu 💗';
 
@@ -301,24 +330,6 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
   const playChime = useCallback((type: 'chirp' | 'purr') => {
     playSynthesizedKittenSound(type);
   }, []);
-
-  // Sequential Typewriter for exact "hello kajuuu 💗"
-  useEffect(() => {
-    if (phase === 'greeting_in_center') {
-      let index = 0;
-      const stepTime = 650 / TARGET_GREETING.length; // smooth ~0.65s reveal
-      const interval = setInterval(() => {
-        index += 1;
-        setDisplayedText(TARGET_GREETING.slice(0, index));
-        if (index >= TARGET_GREETING.length) {
-          clearInterval(interval);
-        }
-      }, stepTime);
-      return () => {
-        clearInterval(interval);
-      };
-    }
-  }, [phase]);
 
   // Main State Machine for the slow, gentle synchronized kitten cycle
   useEffect(() => {
@@ -460,6 +471,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
   };
 
   const handleReplay = () => {
+    setIsPaused(false);
     setPhase('fade_in');
     playChime('purr');
   };
@@ -561,17 +573,17 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
           <AnimatePresence>
             {showGreeting && (
               <motion.div
-                initial={{ opacity: 0, y: 8, scale: 0.75 }}
+                initial={{ opacity: 0, y: 8, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -6, scale: 0.85 }}
                 transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-                className="absolute -top-1 left-1/2 -translate-x-1/2 whitespace-nowrap z-40 bg-[#F2E7D8] border border-[#D2BFA6] px-4 py-1.5 rounded-full shadow-[0_4px_16px_rgba(84,53,31,0.12)] flex items-center gap-1.5"
+                className="absolute -top-1.5 left-1/2 -translate-x-1/2 whitespace-nowrap z-40 bg-[#F2E7D8] border border-[#D2BFA6] px-4 py-1.5 rounded-full shadow-[0_4px_16px_rgba(84,53,31,0.14)] flex items-center gap-1.5"
               >
-                <span className="font-heading font-bold text-xs sm:text-sm tracking-wide text-[#54351F]">
-                  {displayedText || TARGET_GREETING}
-                </span>
-                {/* Pointer beak pointing down between the kittens */}
-                <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#F2E7D8] border-b border-r border-[#D2BFA6] rotate-45" />
+                <TypewriterGreeting text={TARGET_GREETING} />
+                {/* Pointer beak pointing towards Milo (left kitten) */}
+                <div className="absolute -bottom-1.5 left-[30%] w-2.5 h-2.5 bg-[#F2E7D8] border-b border-r border-[#D2BFA6] rotate-45" />
+                {/* Pointer beak pointing towards Bella (right kitten) */}
+                <div className="absolute -bottom-1.5 right-[30%] w-2.5 h-2.5 bg-[#F2E7D8] border-b border-r border-[#D2BFA6] rotate-45" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -579,14 +591,18 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
           {/* LEFT KITTEN: MILO */}
           <motion.div
             animate={{
-              left: leftKittenX,
+              left: shouldReduceMotion ? 'calc(50% - 58px)' : leftKittenX,
               scaleX: leftKittenFacing === 'left' ? -1 : 1,
               opacity: phase === 'fade_in' ? [0, 1] : 1,
             }}
             transition={{
               duration:
-                phase === 'walking_to_center' || phase === 'returning_to_corners'
+                shouldReduceMotion
+                  ? 0.3
+                  : phase === 'walking_to_center' || phase === 'returning_to_corners'
                   ? 4.8
+                  : phase === 'fade_in'
+                  ? 0.8
                   : 0.4,
               ease: [0.42, 0, 0.58, 1], // Gentle, smooth natural easing
             }}
@@ -598,7 +614,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
               id={`left-${sectionName}`}
               collarColor="#75451F"
               bellColor="#B9875B"
-              isWalking={isWalking}
+              isWalking={isWalking && !shouldReduceMotion}
               isGreeting={showGreeting}
               isHappyJump={jumpKitten === 'left'}
             />
@@ -607,14 +623,18 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
           {/* RIGHT KITTEN: BELLA */}
           <motion.div
             animate={{
-              left: rightKittenX,
+              left: shouldReduceMotion ? 'calc(50% + 4px)' : rightKittenX,
               scaleX: rightKittenFacing === 'left' ? -1 : 1,
               opacity: phase === 'fade_in' ? [0, 1] : 1,
             }}
             transition={{
               duration:
-                phase === 'walking_to_center' || phase === 'returning_to_corners'
+                shouldReduceMotion
+                  ? 0.3
+                  : phase === 'walking_to_center' || phase === 'returning_to_corners'
                   ? 4.8
+                  : phase === 'fade_in'
+                  ? 0.8
                   : 0.4,
               ease: [0.42, 0, 0.58, 1],
             }}
@@ -626,7 +646,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
               id={`right-${sectionName}`}
               collarColor="#B9875B"
               bellColor="#75451F"
-              isWalking={isWalking}
+              isWalking={isWalking && !shouldReduceMotion}
               isGreeting={showGreeting}
               isHappyJump={jumpKitten === 'right'}
             />
