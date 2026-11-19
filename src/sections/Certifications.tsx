@@ -7,7 +7,7 @@ import { Award, Users, Calendar, ExternalLink } from 'lucide-react';
 
 export const Certifications: React.FC = () => {
   return (
-    <section id="certifications" className="py-20 lg:py-28 bg-[#FAF6EF] relative overflow-hidden">
+    <section id="certifications" className="py-20 lg:py-28 bg-[#EDE0CC] relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
           <SectionHeading
@@ -35,7 +35,7 @@ export const Certifications: React.FC = () => {
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         {cert.badgeText && (
-                          <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#EFE3D3] text-[#75451F] border border-[#D8C1A8] mb-2">
+                          <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#E8DAC5] text-[#75451F] border border-[#D2BFA6] mb-2">
                             {cert.badgeText}
                           </span>
                         )}
@@ -57,7 +57,7 @@ export const Certifications: React.FC = () => {
                             href={cert.credentialUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded-lg bg-[#FAF6EF] text-[#75451F] hover:bg-[#75451F] hover:text-white border border-[#D8C1A8] transition-colors shadow-xs"
+                            className="p-1.5 rounded-lg bg-[#E8DAC5] text-[#75451F] hover:bg-[#75451F] hover:text-white border border-[#D2BFA6] transition-colors shadow-xs"
                             aria-label={`Verify ${cert.title}`}
                             title="Verify Certificate"
                           >
@@ -86,7 +86,7 @@ export const Certifications: React.FC = () => {
                 <Reveal key={act.id} delay={idx * 0.1} yOffset={15}>
                   <Card className="!p-5 group hover:border-[#B9875B]">
                     <div className="flex items-start justify-between gap-2 mb-1.5">
-                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#EFE3D3] text-[#75451F] border border-[#D8C1A8]">
+                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#E8DAC5] text-[#75451F] border border-[#D2BFA6]">
                         {act.role}
                       </span>
                       <span className="text-xs font-mono text-[#806F60] flex items-center gap-1">

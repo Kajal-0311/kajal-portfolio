@@ -9,7 +9,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-[#FAF6EF] relative overflow-hidden">
+    <section id="about" className="py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
       {/* Decorative ambient background */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#B9875B]/8 rounded-full blur-[130px] pointer-events-none" />
 
@@ -25,8 +25,8 @@ export const About: React.FC = () => {
                 </div>
 
                 {/* Framed Photo Container (rounded-frame = 28px, delicate beige border and soft brown shadow) */}
-                <div className="relative z-10 w-[270px] sm:w-[320px] aspect-[4/5] rounded-frame overflow-hidden bg-[#FFF9F1] p-2 border border-[#D8C1A8] shadow-[0_20px_50px_-15px_rgba(84,53,31,0.15)] group">
-                  <div className="w-full h-full rounded-[20px] overflow-hidden bg-[#EFE3D3] relative">
+                <div className="relative z-10 w-[270px] sm:w-[320px] aspect-[4/5] rounded-frame overflow-hidden bg-[#F2E7D8] p-2 border border-[#D2BFA6] shadow-[0_20px_50px_-15px_rgba(84,53,31,0.15)] group">
+                  <div className="w-full h-full rounded-[20px] overflow-hidden bg-[#EDE0CC] relative">
                     <img
                       src={portfolioData.profile.avatarUrl}
                       alt="Kajal Mohapatra - About portrait"
@@ -38,7 +38,7 @@ export const About: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#54351F]/60 via-transparent to-transparent pointer-events-none" />
 
                     {/* Bottom floating badge inside frame */}
-                    <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#FFF9F1]/95 backdrop-blur-md border border-[#D8C1A8] shadow-sm">
+                    <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#F2E7D8]/95 backdrop-blur-md border border-[#D2BFA6] shadow-sm">
                       <div className="flex items-center gap-2 text-xs font-mono text-[#75451F] font-semibold">
                         <CheckCircle2 size={14} className="text-[#B9875B]" />
                         <span>B.Tech CSE (AI & ML)</span>

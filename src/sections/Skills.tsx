@@ -17,7 +17,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-24 lg:py-32 bg-[#F5EBDD] relative overflow-hidden">
+    <section id="skills" className="py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#B9875B]/6 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
@@ -36,8 +36,8 @@ export const Skills: React.FC = () => {
               <Card className="h-full flex flex-col justify-between !p-6 group">
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-[#D8C1A8]/60">
-                    <div className="w-9 h-9 rounded-lg bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center group-hover:scale-110 group-hover:border-[#B9875B] transition-transform shadow-xs">
+                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-[#D2BFA6]/60">
+                    <div className="w-9 h-9 rounded-lg bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center group-hover:scale-110 group-hover:border-[#B9875B] transition-transform shadow-xs">
                       {categoryIcons[group.category] || <Code2 size={18} className="text-[#75451F]" />}
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#54351F] group-hover:text-[#75451F] transition-colors">
@@ -59,7 +59,7 @@ export const Skills: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-[#D8C1A8]/40 flex items-center justify-between text-[11px] font-mono text-[#806F60]">
+                <div className="pt-4 mt-4 border-t border-[#D2BFA6]/40 flex items-center justify-between text-[11px] font-mono text-[#806F60]">
                   <span>{group.skills.length} competencies</span>
                   <span className="text-[#75451F] font-semibold">● applied</span>
                 </div>

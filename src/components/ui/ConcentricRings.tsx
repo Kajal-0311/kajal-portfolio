@@ -21,7 +21,7 @@ export const ConcentricRings: React.FC<ConcentricRingsProps> = ({
       <circle cx="250" cy="250" r="100" stroke="#B9875B" strokeWidth="1" strokeDasharray="3 3" opacity="0.45" />
       <circle cx="250" cy="250" r="160" stroke="#75451F" strokeWidth="1" opacity="0.3" />
       <circle cx="250" cy="250" r="215" stroke="#B9875B" strokeWidth="1" strokeDasharray="6 6" opacity="0.35" />
-      <circle cx="250" cy="250" r="248" stroke="#D8C1A8" strokeWidth="1" opacity="0.4" />
+      <circle cx="250" cy="250" r="248" stroke="#D2BFA6" strokeWidth="1" opacity="0.4" />
 
       {/* Subtle orbital dots */}
       <circle cx="250" cy="90" r="3.5" fill="#B9875B" opacity="0.6" />

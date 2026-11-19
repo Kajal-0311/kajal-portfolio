@@ -14,7 +14,7 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-[#F5EBDD] relative overflow-hidden">
+    <section id="services" className="py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#B9875B]/6 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
@@ -36,7 +36,7 @@ export const Services: React.FC = () => {
                 <Card className="flex flex-col h-full justify-between !p-6 group">
                   <div>
                     {/* Icon container */}
-                    <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] mb-6 group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white group-hover:border-[#75451F] transition-all duration-300 shadow-xs">
+                    <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] mb-6 group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white group-hover:border-[#75451F] transition-all duration-300 shadow-xs">
                       <Icon size={22} />
                     </div>
 
@@ -52,10 +52,10 @@ export const Services: React.FC = () => {
                   </div>
 
                   {/* Highlights list */}
-                  <div className="pt-4 border-t border-[#D8C1A8]/60 space-y-2.5 mt-auto">
+                  <div className="pt-4 border-t border-[#D2BFA6]/60 space-y-2.5 mt-auto">
                     {service.highlights.map((item) => (
                       <div key={item} className="flex items-center gap-2 text-xs text-[#44372E] font-sans">
-                        <span className="w-4 h-4 rounded-full bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#B9875B] flex-shrink-0">
+                        <span className="w-4 h-4 rounded-full bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#B9875B] flex-shrink-0">
                           <Check size={10} />
                         </span>
                         <span>{item}</span>

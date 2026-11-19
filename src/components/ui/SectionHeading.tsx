@@ -38,7 +38,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
 
   return (
     <div className={`flex flex-col ${alignClasses} mb-12 md:mb-16 ${className}`}>
-      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EFE3D3] border border-[#D8C1A8] text-[#75451F] text-xs font-mono font-medium tracking-[0.15em] uppercase mb-4 shadow-[0_2px_8px_rgba(84,53,31,0.05)]">
+      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E8DAC5] border border-[#D2BFA6] text-[#75451F] text-xs font-mono font-medium tracking-[0.15em] uppercase mb-4 shadow-[0_2px_8px_rgba(84,53,31,0.05)]">
         <span className="w-1.5 h-1.5 rounded-full bg-[#B9875B] animate-pulse" />
         {label}
       </div>

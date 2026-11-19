@@ -8,34 +8,35 @@ export default {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#F5EBDD',
-          primary: '#F5EBDD',   // Warm cream
-          secondary: '#FAF6EF', // Soft ivory
-          section: '#EFE3D3',   // Light beige
-          900: '#F5EBDD',
-          800: '#EFE3D3',
-          ivory: '#FAF6EF',
+          DEFAULT: '#EDE0CC',
+          primary: '#EDE0CC',   // Warm beige (main page background)
+          secondary: '#E8DAC5', // Alternate section background
+          section: '#E8DAC5',   // Slightly deeper creamy beige
+          900: '#EDE0CC',
+          800: '#E8DAC5',
+          cream: '#E8DAC5',
         },
         surface: {
-          DEFAULT: '#FFF9F1', // Warm off-white
-          2: '#F5ECE1',       // Hover state of cards
-          card: '#FFF9F1',
-          beige: '#EFE3D3',
+          DEFAULT: '#F2E7D8', // Soft sand/cream (cards)
+          2: '#E8DAC5',       // Secondary surface / hover
+          card: '#F2E7D8',    // Project and information cards
+          sand: '#F2E7D8',
+          beige: '#E8DAC5',
         },
         border: {
-          DEFAULT: '#D8C1A8', // Muted beige
-          muted: '#E6D7C7',
-          dark: '#C8AE93',
+          DEFAULT: '#D2BFA6', // Warm beige border
+          muted: '#DCCBBA',
+          dark: '#BFA88D',
         },
         heading: {
           DEFAULT: '#54351F', // Deep mocha brown
           secondary: '#75451F', // Coffee brown
         },
         accent: {
-          DEFAULT: '#75451F', // Primary coffee brown
+          DEFAULT: '#75451F', // Primary coffee brown (buttons)
           hover: '#54351F',   // Deep mocha hover
           glow: 'rgba(185, 135, 91, 0.25)', // Caramel glow
-          caramel: '#B9875B', // Caramel beige
+          caramel: '#B9875B', // Caramel highlight
           2: '#B9875B',       // Secondary accent (caramel)
         },
         coffee: {
@@ -44,10 +45,11 @@ export default {
           light: '#B9875B',
         },
         text: {
-          DEFAULT: '#44372E', // Dark warm brown
+          DEFAULT: '#44372E', // Dark warm brown body text
           muted: '#806F60',   // Muted brown
-          mocha: '#54351F',
-          coffee: '#75451F',
+          mocha: '#54351F',   // Heading tone
+          coffee: '#75451F',  // Button/accent tone
+          caramel: '#B9875B', // Highlighted text
         },
       },
       fontFamily: {

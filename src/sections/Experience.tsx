@@ -7,7 +7,7 @@ import { Briefcase, GraduationCap, Calendar, MapPin, Award } from 'lucide-react'
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 lg:py-32 bg-[#FAF6EF] relative overflow-hidden">
+    <section id="experience" className="py-24 lg:py-32 bg-[#EDE0CC] relative overflow-hidden">
       {/* Decorative radial blur - warm caramel */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#B9875B]/6 rounded-full blur-[140px] pointer-events-none" />
 
@@ -22,7 +22,7 @@ export const Experience: React.FC = () => {
         </Reveal>
 
         {/* Vertical Timeline */}
-        <div className="relative pl-6 sm:pl-8 border-l-2 border-[#D8C1A8] ml-2 sm:ml-4 space-y-12 max-w-4xl">
+        <div className="relative pl-6 sm:pl-8 border-l-2 border-[#D2BFA6] ml-2 sm:ml-4 space-y-12 max-w-4xl">
           {portfolioData.timeline.map((item: TimelineItem, idx: number) => {
             const isExperience = item.type === 'experience';
             const isPrimary = idx <= 1;
@@ -33,8 +33,8 @@ export const Experience: React.FC = () => {
                 <div
                   className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full border-2 transition-all duration-300 flex items-center justify-center ${
                     isPrimary
-                      ? 'bg-[#FFF9F1] border-[#75451F] shadow-[0_0_12px_rgba(185,135,91,0.5)] group-hover:scale-125'
-                      : 'bg-[#FFF9F1] border-[#D8C1A8] group-hover:border-[#B9875B]'
+                      ? 'bg-[#F2E7D8] border-[#75451F] shadow-[0_0_12px_rgba(185,135,91,0.5)] group-hover:scale-125'
+                      : 'bg-[#F2E7D8] border-[#D2BFA6] group-hover:border-[#B9875B]'
                   }`}
                 >
                   <div
@@ -45,22 +45,22 @@ export const Experience: React.FC = () => {
                 </div>
 
                 <Reveal delay={idx * 0.08} yOffset={20}>
-                  <Card className={`!p-6 ${!isPrimary ? '!p-4 bg-[#FFF9F1]/80' : ''}`}>
+                  <Card className={`!p-6 ${!isPrimary ? '!p-4 bg-[#F2E7D8]/80' : ''}`}>
                     {/* Top metadata row */}
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                       <div className="flex items-center gap-2">
                         <span
                           className={`p-1.5 rounded-lg text-xs flex items-center gap-1.5 font-mono ${
                             isExperience
-                              ? 'bg-[#EFE3D3] text-[#75451F] border border-[#D8C1A8]'
-                              : 'bg-[#FAF6EF] text-[#54351F] border border-[#D8C1A8]'
+                              ? 'bg-[#E8DAC5] text-[#75451F] border border-[#D2BFA6]'
+                              : 'bg-[#E8DAC5] text-[#54351F] border border-[#D2BFA6]'
                           }`}
                         >
                           {isExperience ? <Briefcase size={13} /> : <GraduationCap size={13} />}
                           <span className="capitalize">{item.type}</span>
                         </span>
                         {item.score && (
-                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#FAF6EF] border border-[#D8C1A8] text-xs font-mono font-bold text-[#54351F]">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#E8DAC5] border border-[#D2BFA6] text-xs font-mono font-bold text-[#54351F]">
                             <Award size={12} className="text-[#B9875B]" />
                             {item.score}
                           </span>
@@ -92,7 +92,7 @@ export const Experience: React.FC = () => {
 
                     {/* Detail bullets */}
                     {item.bullets && item.bullets.length > 0 && (
-                      <ul className="mt-3 space-y-2 border-t border-[#D8C1A8]/50 pt-3">
+                      <ul className="mt-3 space-y-2 border-t border-[#D2BFA6]/50 pt-3">
                         {item.bullets.map((bullet, bIdx) => (
                           <li
                             key={bIdx}

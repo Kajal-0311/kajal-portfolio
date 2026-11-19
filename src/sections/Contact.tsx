@@ -71,7 +71,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-[#F5EBDD] relative overflow-hidden">
+    <section id="contact" className="py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
       {/* Background warm caramel glow */}
       <div className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-[#B9875B]/8 rounded-full blur-[160px] pointer-events-none" />
 
@@ -93,9 +93,9 @@ export const Contact: React.FC = () => {
                 {/* Email card */}
                 <a
                   href={`mailto:${portfolioData.profile.email}`}
-                  className="flex items-start gap-4 p-5 rounded-card bg-[#FFF9F1] border border-[#D8C1A8] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
+                  className="flex items-start gap-4 p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
+                  <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
                     <Mail size={20} />
                   </div>
                   <div>
@@ -111,9 +111,9 @@ export const Contact: React.FC = () => {
                 {/* Phone card */}
                 <a
                   href={`tel:${portfolioData.profile.phone.replace(/[^0-9+]/g, '')}`}
-                  className="flex items-start gap-4 p-5 rounded-card bg-[#FFF9F1] border border-[#D8C1A8] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
+                  className="flex items-start gap-4 p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
+                  <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
                     <Phone size={20} />
                   </div>
                   <div>
@@ -127,8 +127,8 @@ export const Contact: React.FC = () => {
                 </a>
 
                 {/* Location card */}
-                <div className="flex items-start gap-4 p-5 rounded-card bg-[#FFF9F1] border border-[#D8C1A8]">
-                  <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#B9875B] flex-shrink-0 shadow-xs">
+                <div className="flex items-start gap-4 p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6]">
+                  <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#B9875B] flex-shrink-0 shadow-xs">
                     <MapPin size={20} />
                   </div>
                   <div>
@@ -152,7 +152,7 @@ export const Contact: React.FC = () => {
                       href={portfolioData.profile.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#FFF9F1] border border-[#D8C1A8] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2E7D8] border border-[#D2BFA6] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
                     >
                       <FaLinkedinIn size={14} className="text-[#75451F] group-hover:text-white" />
                       <span>LinkedIn</span>
@@ -162,7 +162,7 @@ export const Contact: React.FC = () => {
                       href={portfolioData.profile.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#FFF9F1] border border-[#D8C1A8] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2E7D8] border border-[#D2BFA6] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
                     >
                       <FaGithub size={14} className="text-[#54351F] group-hover:text-white" />
                       <span>GitHub</span>
@@ -205,8 +205,8 @@ export const Contact: React.FC = () => {
                         type="text"
                         placeholder="e.g. Sarah Jenkins"
                         {...register('name', { required: 'Name is required' })}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors ${
-                          errors.name ? 'border-red-500/70' : 'border-[#D8C1A8]'
+                        className={`w-full px-4 py-3 rounded-xl bg-[#EDE0CC] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors ${
+                          errors.name ? 'border-red-500/70' : 'border-[#D2BFA6]'
                         }`}
                       />
                       {errors.name && (
@@ -228,8 +228,8 @@ export const Contact: React.FC = () => {
                             message: 'Invalid email address',
                           },
                         })}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors ${
-                          errors.email ? 'border-red-500/70' : 'border-[#D8C1A8]'
+                        className={`w-full px-4 py-3 rounded-xl bg-[#EDE0CC] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors ${
+                          errors.email ? 'border-red-500/70' : 'border-[#D2BFA6]'
                         }`}
                       />
                       {errors.email && (
@@ -247,7 +247,7 @@ export const Contact: React.FC = () => {
                       type="text"
                       placeholder="e.g. AI/ML Internship Opportunity"
                       {...register('subject')}
-                      className="w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors"
                     />
                   </div>
 
@@ -260,8 +260,8 @@ export const Contact: React.FC = () => {
                       rows={5}
                       placeholder="Share project details, team info, or internship scope..."
                       {...register('message', { required: 'Message cannot be empty' })}
-                      className={`w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors resize-none ${
-                        errors.message ? 'border-red-500/70' : 'border-[#D8C1A8]'
+                      className={`w-full px-4 py-3 rounded-xl bg-[#EDE0CC] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors resize-none ${
+                        errors.message ? 'border-red-500/70' : 'border-[#D2BFA6]'
                       }`}
                     />
                     {errors.message && (
@@ -271,7 +271,7 @@ export const Contact: React.FC = () => {
 
                   {/* Feedback notices */}
                   {status === 'success' && (
-                    <div className="p-4 rounded-xl bg-[#EFE3D3] border border-[#B9875B]/50 flex items-center gap-3 text-[#54351F] text-sm font-sans animate-fadeIn">
+                    <div className="p-4 rounded-xl bg-[#E8DAC5] border border-[#B9875B]/50 flex items-center gap-3 text-[#54351F] text-sm font-sans animate-fadeIn">
                       <CheckCircle2 size={18} className="text-[#75451F] flex-shrink-0" />
                       <span>Thank you! Your message has been sent. Kajal will get back to you shortly.</span>
                     </div>
