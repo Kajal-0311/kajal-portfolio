@@ -15,11 +15,11 @@ export const Chip: React.FC<ChipProps> = ({
 }) => {
   const variantStyles = {
     default:
-      'bg-surface text-text-muted border-border hover:border-accent/40 hover:text-text hover:shadow-[0_0_15px_rgba(30,123,255,0.2)]',
+      'bg-[#FAF6EF] text-[#54351F] border-[#D8C1A8] hover:border-[#B9875B] hover:text-[#75451F] hover:bg-[#FFF9F1] hover:shadow-[0_2px_10px_rgba(185,135,91,0.15)]',
     accent:
-      'bg-accent/10 text-accent border-accent/30 hover:border-accent hover:shadow-[0_0_20px_rgba(30,123,255,0.3)]',
+      'bg-[#EFE3D3] text-[#75451F] border-[#B9875B]/40 hover:border-[#75451F] hover:bg-[#FAF6EF]',
     glow:
-      'bg-surface-2 text-accent-2 border-accent-2/30 shadow-[0_0_15px_rgba(56,225,255,0.15)]',
+      'bg-[#FFF9F1] text-[#75451F] border-[#B9875B] shadow-[0_2px_12px_rgba(185,135,91,0.2)]',
   };
 
   return (

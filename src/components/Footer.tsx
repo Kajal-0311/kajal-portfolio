@@ -20,31 +20,31 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-bg-800/80 border-t border-border/80 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#54351F] text-[#FAF6EF] border-t border-[#75451F] pt-16 pb-12 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-border/60">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-[#75451F]">
           {/* Logo & Tagline */}
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center font-heading font-bold text-lg text-white shadow-[0_0_20px_rgba(30,123,255,0.4)]">
+            <div className="w-10 h-10 rounded-xl bg-[#75451F] border border-[#B9875B]/40 flex items-center justify-center font-heading font-bold text-lg text-[#FAF6EF] shadow-[0_4px_14px_rgba(0,0,0,0.2)]">
               {portfolioData.profile.logoMark}
             </div>
             <div>
-              <span className="font-heading font-bold text-base tracking-wider text-text block">
+              <span className="font-heading font-bold text-base tracking-wider text-[#FAF6EF] block">
                 KAJAL MOHAPATRA
               </span>
-              <span className="text-xs font-mono text-text-muted">
+              <span className="text-xs font-mono text-[#D8C1A8]">
                 {portfolioData.profile.roleTagline}
               </span>
             </div>
           </div>
 
           {/* Quick Nav Links */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-text-muted">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-[#D8C1A8]">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="hover:text-accent transition-colors"
+                className="hover:text-[#B9875B] transition-colors"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
           {/* Back to top button */}
           <button
             onClick={scrollToTop}
-            className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center text-text-muted hover:text-white hover:border-accent hover:bg-accent/20 transition-all flex-shrink-0"
+            className="w-10 h-10 rounded-full bg-[#75451F] border border-[#B9875B]/30 flex items-center justify-center text-[#FAF6EF] hover:bg-[#B9875B] hover:text-[#54351F] transition-all flex-shrink-0 cursor-pointer shadow-xs"
             aria-label="Back to top"
             title="Back to top"
           >
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright & socials */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-text-muted">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#D8C1A8]">
           <p>© 2026 Kajal Mohapatra. All rights reserved. B.Tech CSE (AI & ML) @ VSSUT Burla.</p>
 
           <div className="flex items-center gap-4">
@@ -71,7 +71,7 @@ export const Footer: React.FC = () => {
               href={portfolioData.profile.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-muted hover:text-white transition-colors"
+              className="text-[#D8C1A8] hover:text-[#FAF6EF] transition-colors"
               aria-label="GitHub"
             >
               <FaGithub size={16} />
@@ -80,14 +80,14 @@ export const Footer: React.FC = () => {
               href={portfolioData.profile.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-muted hover:text-accent transition-colors"
+              className="text-[#D8C1A8] hover:text-[#B9875B] transition-colors"
               aria-label="LinkedIn"
             >
               <FaLinkedinIn size={16} />
             </a>
             <a
               href={`mailto:${portfolioData.profile.email}`}
-              className="text-text-muted hover:text-accent transition-colors text-xs"
+              className="text-[#B9875B] hover:text-[#FAF6EF] transition-colors text-xs font-sans"
             >
               {portfolioData.profile.email}
             </a>

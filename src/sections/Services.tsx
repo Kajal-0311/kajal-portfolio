@@ -14,8 +14,8 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-bg-900 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-accent-2/5 rounded-full blur-[150px] pointer-events-none" />
+    <section id="services" className="py-24 lg:py-32 bg-[#F5EBDD] relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#B9875B]/6 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
@@ -36,26 +36,26 @@ export const Services: React.FC = () => {
                 <Card className="flex flex-col h-full justify-between !p-6 group">
                   <div>
                     {/* Icon container */}
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent mb-6 group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(30,123,255,0.15)]">
+                    <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] mb-6 group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white group-hover:border-[#75451F] transition-all duration-300 shadow-xs">
                       <Icon size={22} />
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-heading font-bold text-xl text-text mb-3 group-hover:text-accent transition-colors">
+                    <h3 className="font-heading font-bold text-xl text-[#54351F] mb-3 group-hover:text-[#75451F] transition-colors">
                       {service.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-text-muted text-sm leading-relaxed mb-6 font-sans">
+                    <p className="text-[#44372E] text-sm leading-relaxed mb-6 font-sans">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Highlights list */}
-                  <div className="pt-4 border-t border-border/60 space-y-2 mt-auto">
+                  <div className="pt-4 border-t border-[#D8C1A8]/60 space-y-2.5 mt-auto">
                     {service.highlights.map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-xs text-text-muted font-sans">
-                        <span className="w-4 h-4 rounded-full bg-surface-2 border border-border flex items-center justify-center text-accent flex-shrink-0">
+                      <div key={item} className="flex items-center gap-2 text-xs text-[#44372E] font-sans">
+                        <span className="w-4 h-4 rounded-full bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#B9875B] flex-shrink-0">
                           <Check size={10} />
                         </span>
                         <span>{item}</span>

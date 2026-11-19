@@ -22,7 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-2/50 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
+    'inline-flex items-center justify-center font-medium rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#B9875B]/50 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
 
   const sizeStyles = {
     sm: 'text-xs px-4 py-2 gap-1.5',
@@ -32,11 +32,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-accent text-white hover:bg-accent/90 hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(30,123,255,0.35)] hover:shadow-[0_8px_30px_rgba(30,123,255,0.5)] active:translate-y-0',
+      'bg-[#75451F] text-white hover:bg-[#54351F] hover:-translate-y-0.5 shadow-[0_4px_16px_rgba(117,69,31,0.22)] hover:shadow-[0_8px_26px_rgba(84,53,31,0.32)] active:translate-y-0',
     ghost:
-      'bg-transparent text-text border border-border hover:border-accent hover:text-accent hover:-translate-y-0.5 active:translate-y-0',
+      'bg-transparent text-[#75451F] border border-[#75451F]/40 hover:border-[#75451F] hover:bg-[#FAF6EF] hover:text-[#54351F] hover:-translate-y-0.5 active:translate-y-0',
     secondary:
-      'bg-surface-2 text-text border border-border hover:border-accent-2/50 hover:text-white hover:-translate-y-0.5 active:translate-y-0',
+      'bg-[#FAF6EF] text-[#54351F] border border-[#D8C1A8] hover:border-[#B9875B] hover:bg-[#FFF9F1] hover:text-[#75451F] hover:-translate-y-0.5 active:translate-y-0',
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

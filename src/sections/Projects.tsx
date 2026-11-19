@@ -16,9 +16,9 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-bg-800/50 relative overflow-hidden">
-      {/* Background radial accent glow */}
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[140px] pointer-events-none" />
+    <section id="projects" className="py-24 lg:py-32 bg-[#EFE3D3]/40 relative overflow-hidden">
+      {/* Background radial accent glow - warm caramel */}
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#B9875B]/8 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
@@ -30,9 +30,9 @@ export const Projects: React.FC = () => {
               subtitle="End-to-end intelligent systems: from regression & classification models with Streamlit frontends to fully offline RAG and defence computational imaging."
               className="mb-0"
             />
-            <div className="hidden md:flex items-center gap-2 text-xs font-mono text-text-muted mt-4 md:mt-0">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span>Verified Resume Projects</span>
+            <div className="hidden md:flex items-center gap-2 text-xs font-mono text-[#806F60] mt-4 md:mt-0 bg-[#FAF6EF] px-3.5 py-1.5 rounded-full border border-[#D8C1A8]">
+              <span className="w-2 h-2 rounded-full bg-[#B9875B] animate-pulse" />
+              <span className="font-medium text-[#54351F]">Verified Resume Projects</span>
             </div>
           </div>
         </Reveal>
@@ -44,7 +44,7 @@ export const Projects: React.FC = () => {
 
             return (
               <Reveal key={project.id} delay={idx * 0.1} yOffset={24}>
-                <Card className="flex flex-col h-full !p-5 sm:!p-6 group justify-between">
+                <Card className="flex flex-col h-full !p-5 sm:!p-6 group justify-between hover:border-[#B9875B] transition-all">
                   <div>
                     {/* Visual Thumbnail */}
                     <div className="mb-5 overflow-hidden rounded-xl">
@@ -54,22 +54,22 @@ export const Projects: React.FC = () => {
                     {/* Badge + Header */}
                     <div className="flex items-center justify-between gap-2 mb-3">
                       {project.badge && (
-                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-accent/15 text-accent border border-accent/25">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-[#EFE3D3] text-[#75451F] border border-[#D8C1A8]">
                           {project.badge}
                         </span>
                       )}
-                      <span className="text-[11px] font-mono text-text-muted">
+                      <span className="text-[11px] font-mono text-[#806F60]">
                         0{idx + 1}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-heading font-bold text-xl sm:text-2xl text-text mb-2.5 group-hover:text-accent transition-colors leading-snug">
+                    <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#54351F] mb-2.5 group-hover:text-[#75451F] transition-colors leading-snug">
                       {project.title}
                     </h3>
 
                     {/* Tagline / 2-line Description */}
-                    <p className="text-text-muted text-sm leading-relaxed mb-4 font-sans line-clamp-3">
+                    <p className="text-[#44372E] text-sm leading-relaxed mb-4 font-sans line-clamp-3">
                       {project.description}
                     </p>
 
@@ -84,36 +84,36 @@ export const Projects: React.FC = () => {
 
                     {/* Expandable Architecture & Details Drawer */}
                     {isExpanded && (
-                      <div className="my-4 pt-4 border-t border-border/70 text-xs space-y-3 font-sans animate-fadeIn">
+                      <div className="my-4 pt-4 border-t border-[#D8C1A8]/60 text-xs space-y-3 font-sans animate-fadeIn">
                         <div>
-                          <span className="font-mono text-accent-2 font-semibold uppercase tracking-wider block mb-1">
+                          <span className="font-mono text-[#75451F] font-bold uppercase tracking-wider block mb-1">
                             Challenge / Problem:
                           </span>
-                          <p className="text-text-muted leading-relaxed">{project.problem}</p>
+                          <p className="text-[#44372E] leading-relaxed">{project.problem}</p>
                         </div>
                         <div>
-                          <span className="font-mono text-accent font-semibold uppercase tracking-wider block mb-1">
+                          <span className="font-mono text-[#B9875B] font-bold uppercase tracking-wider block mb-1">
                             Engineering Approach:
                           </span>
-                          <p className="text-text-muted leading-relaxed">{project.approach}</p>
+                          <p className="text-[#44372E] leading-relaxed">{project.approach}</p>
                         </div>
                         <div>
-                          <span className="font-mono text-green-400 font-semibold uppercase tracking-wider block mb-1">
+                          <span className="font-mono text-[#54351F] font-bold uppercase tracking-wider block mb-1">
                             Deliverable & Result:
                           </span>
-                          <p className="text-text-muted leading-relaxed">{project.result}</p>
+                          <p className="text-[#44372E] leading-relaxed">{project.result}</p>
                         </div>
                       </div>
                     )}
                   </div>
 
                   {/* Card Footer: Action Links & Accordion Toggle */}
-                  <div className="pt-4 border-t border-border/50 flex items-center justify-between mt-auto">
+                  <div className="pt-4 border-t border-[#D8C1A8]/50 flex items-center justify-between mt-auto">
                     <button
                       onClick={() => toggleExpand(project.id)}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-text-muted hover:text-accent transition-colors py-1"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[#75451F] hover:text-[#54351F] transition-colors py-1 cursor-pointer font-medium"
                     >
-                      <Layers size={14} className="text-accent" />
+                      <Layers size={14} className="text-[#B9875B]" />
                       <span>{isExpanded ? 'Hide Specs' : 'View Specs'}</span>
                       {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                     </button>
@@ -124,22 +124,22 @@ export const Projects: React.FC = () => {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-9 h-9 rounded-full bg-surface-2 border border-border flex items-center justify-center text-text-muted hover:text-white hover:border-accent-2 hover:bg-accent-2/20 transition-all"
+                          className="w-9 h-9 rounded-full bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] hover:text-[#54351F] hover:border-[#B9875B] hover:bg-[#FFF9F1] transition-all shadow-xs"
                           aria-label={`Demo for ${project.title}`}
                           title="Live Demo / Output"
                         >
-                          <ExternalLink size={16} />
+                          <ExternalLink size={15} />
                         </a>
                       )}
                       <a
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-9 h-9 rounded-full bg-accent flex items-center justify-center text-white hover:bg-accent/80 hover:scale-105 shadow-[0_0_15px_rgba(30,123,255,0.4)] transition-all"
+                        className="w-9 h-9 rounded-full bg-[#75451F] flex items-center justify-center text-white hover:bg-[#54351F] hover:scale-105 shadow-[0_4px_12px_rgba(117,69,31,0.22)] transition-all"
                         aria-label={`GitHub repo for ${project.title}`}
                         title="View GitHub Repository"
                       >
-                        <ArrowUpRight size={18} />
+                        <ArrowUpRight size={17} />
                       </a>
                     </div>
                   </div>
@@ -156,7 +156,7 @@ export const Projects: React.FC = () => {
               key={i}
               onClick={() => setActiveMobileIdx(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                activeMobileIdx === i ? 'w-6 bg-accent' : 'w-2 bg-surface-2 border border-border'
+                activeMobileIdx === i ? 'w-6 bg-[#75451F]' : 'w-2 bg-[#D8C1A8]'
               }`}
               aria-label={`Slide ${i + 1}`}
             />

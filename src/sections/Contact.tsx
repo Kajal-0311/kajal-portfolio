@@ -60,21 +60,20 @@ export const Contact: React.FC = () => {
         setStatus('success');
         reset();
       } else {
-        // If Formspree endpoint is placeholder, provide friendly feedback and mailto fallback
+        // Friendly fallback
         setStatus('success');
         reset();
       }
     } catch {
-      // In local dev without Formspree ID, simulate success or provide mailto link
       setStatus('success');
       reset();
     }
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-bg-900 relative overflow-hidden">
-      {/* Background radial glow */}
-      <div className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-accent/8 rounded-full blur-[160px] pointer-events-none" />
+    <section id="contact" className="py-24 lg:py-32 bg-[#F5EBDD] relative overflow-hidden">
+      {/* Background warm caramel glow */}
+      <div className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-[#B9875B]/8 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
@@ -94,16 +93,16 @@ export const Contact: React.FC = () => {
                 {/* Email card */}
                 <a
                   href={`mailto:${portfolioData.profile.email}`}
-                  className="flex items-start gap-4 p-5 rounded-card bg-surface border border-border hover:border-accent/50 hover:bg-surface-2 transition-all group"
+                  className="flex items-start gap-4 p-5 rounded-card bg-[#FFF9F1] border border-[#D8C1A8] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
                     <Mail size={20} />
                   </div>
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-text-muted">
+                    <span className="font-mono text-xs uppercase tracking-wider text-[#806F60]">
                       Email Directly
                     </span>
-                    <p className="font-sans font-semibold text-text text-sm sm:text-base group-hover:text-accent transition-colors mt-0.5 break-all">
+                    <p className="font-sans font-semibold text-[#54351F] text-sm sm:text-base group-hover:text-[#75451F] transition-colors mt-0.5 break-all">
                       {portfolioData.profile.email}
                     </p>
                   </div>
@@ -112,40 +111,40 @@ export const Contact: React.FC = () => {
                 {/* Phone card */}
                 <a
                   href={`tel:${portfolioData.profile.phone.replace(/[^0-9+]/g, '')}`}
-                  className="flex items-start gap-4 p-5 rounded-card bg-surface border border-border hover:border-accent/50 hover:bg-surface-2 transition-all group"
+                  className="flex items-start gap-4 p-5 rounded-card bg-[#FFF9F1] border border-[#D8C1A8] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:scale-110 group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
                     <Phone size={20} />
                   </div>
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-text-muted">
+                    <span className="font-mono text-xs uppercase tracking-wider text-[#806F60]">
                       Phone Number
                     </span>
-                    <p className="font-sans font-semibold text-text text-sm sm:text-base group-hover:text-accent transition-colors mt-0.5">
+                    <p className="font-sans font-semibold text-[#54351F] text-sm sm:text-base group-hover:text-[#75451F] transition-colors mt-0.5">
                       {portfolioData.profile.phone}
                     </p>
                   </div>
                 </a>
 
                 {/* Location card */}
-                <div className="flex items-start gap-4 p-5 rounded-card bg-surface border border-border">
-                  <div className="w-12 h-12 rounded-xl bg-accent-2/10 border border-accent-2/25 flex items-center justify-center text-accent-2 flex-shrink-0">
+                <div className="flex items-start gap-4 p-5 rounded-card bg-[#FFF9F1] border border-[#D8C1A8]">
+                  <div className="w-12 h-12 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center text-[#B9875B] flex-shrink-0 shadow-xs">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-text-muted">
+                    <span className="font-mono text-xs uppercase tracking-wider text-[#806F60]">
                       Location
                     </span>
-                    <p className="font-sans font-semibold text-text text-sm sm:text-base mt-0.5">
+                    <p className="font-sans font-semibold text-[#54351F] text-sm sm:text-base mt-0.5">
                       {portfolioData.profile.location}
                     </p>
-                    <p className="text-xs text-text-muted mt-0.5">Open to Remote & On-Site Internships</p>
+                    <p className="text-xs text-[#806F60] mt-0.5">Open to Remote & On-Site Internships</p>
                   </div>
                 </div>
 
                 {/* Social Profiles */}
                 <div className="pt-4">
-                  <p className="text-xs font-mono uppercase tracking-widest text-text-muted mb-3">
+                  <p className="text-xs font-mono uppercase tracking-widest text-[#806F60] mb-3">
                     Professional Profiles
                   </p>
                   <div className="flex items-center gap-3">
@@ -153,21 +152,21 @@ export const Contact: React.FC = () => {
                       href={portfolioData.profile.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface border border-border text-xs font-mono font-medium text-text hover:text-white hover:border-accent hover:bg-accent/20 transition-all"
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#FFF9F1] border border-[#D8C1A8] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
                     >
-                      <FaLinkedinIn size={14} className="text-accent" />
+                      <FaLinkedinIn size={14} className="text-[#75451F] group-hover:text-white" />
                       <span>LinkedIn</span>
-                      <ArrowUpRight size={12} className="text-text-muted" />
+                      <ArrowUpRight size={12} className="text-[#806F60]" />
                     </a>
                     <a
                       href={portfolioData.profile.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface border border-border text-xs font-mono font-medium text-text hover:text-white hover:border-accent hover:bg-accent/20 transition-all"
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#FFF9F1] border border-[#D8C1A8] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
                     >
-                      <FaGithub size={14} className="text-text" />
+                      <FaGithub size={14} className="text-[#54351F] group-hover:text-white" />
                       <span>GitHub</span>
-                      <ArrowUpRight size={12} className="text-text-muted" />
+                      <ArrowUpRight size={12} className="text-[#806F60]" />
                     </a>
                   </div>
                 </div>
@@ -179,10 +178,10 @@ export const Contact: React.FC = () => {
           <div className="lg:col-span-7">
             <Reveal yOffset={20}>
               <Card className="!p-6 sm:!p-8">
-                <h3 className="font-heading font-bold text-xl sm:text-2xl text-text mb-2">
+                <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#54351F] mb-2">
                   Send a Message
                 </h3>
-                <p className="text-sm text-text-muted mb-6 font-sans">
+                <p className="text-sm text-[#806F60] mb-6 font-sans">
                   Have an internship, project, or question? Fill in the details below.
                 </p>
 
@@ -199,25 +198,25 @@ export const Contact: React.FC = () => {
                   {/* Name and Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                        Your Name <span className="text-accent">*</span>
+                      <label className="block text-xs font-mono text-[#806F60] uppercase tracking-wider mb-2 font-medium">
+                        Your Name <span className="text-[#75451F]">*</span>
                       </label>
                       <input
                         type="text"
                         placeholder="e.g. Sarah Jenkins"
                         {...register('name', { required: 'Name is required' })}
-                        className={`w-full px-4 py-3 rounded-xl bg-bg-900 border text-text placeholder-text-muted/50 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors ${
-                          errors.name ? 'border-red-500/70' : 'border-border'
+                        className={`w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors ${
+                          errors.name ? 'border-red-500/70' : 'border-[#D8C1A8]'
                         }`}
                       />
                       {errors.name && (
-                        <p className="text-xs text-red-400 mt-1 font-mono">{errors.name.message}</p>
+                        <p className="text-xs text-red-600 mt-1 font-mono">{errors.name.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                        Your Email <span className="text-accent">*</span>
+                      <label className="block text-xs font-mono text-[#806F60] uppercase tracking-wider mb-2 font-medium">
+                        Your Email <span className="text-[#75451F]">*</span>
                       </label>
                       <input
                         type="email"
@@ -229,58 +228,58 @@ export const Contact: React.FC = () => {
                             message: 'Invalid email address',
                           },
                         })}
-                        className={`w-full px-4 py-3 rounded-xl bg-bg-900 border text-text placeholder-text-muted/50 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors ${
-                          errors.email ? 'border-red-500/70' : 'border-border'
+                        className={`w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors ${
+                          errors.email ? 'border-red-500/70' : 'border-[#D8C1A8]'
                         }`}
                       />
                       {errors.email && (
-                        <p className="text-xs text-red-400 mt-1 font-mono">{errors.email.message}</p>
+                        <p className="text-xs text-red-600 mt-1 font-mono">{errors.email.message}</p>
                       )}
                     </div>
                   </div>
 
                   {/* Subject */}
                   <div>
-                    <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-mono text-[#806F60] uppercase tracking-wider mb-2 font-medium">
                       Subject
                     </label>
                     <input
                       type="text"
                       placeholder="e.g. AI/ML Internship Opportunity"
                       {...register('subject')}
-                      className="w-full px-4 py-3 rounded-xl bg-bg-900 border border-border text-text placeholder-text-muted/50 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border border-[#D8C1A8] text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs font-mono text-text-muted uppercase tracking-wider mb-2">
-                      Message <span className="text-accent">*</span>
+                    <label className="block text-xs font-mono text-[#806F60] uppercase tracking-wider mb-2 font-medium">
+                      Message <span className="text-[#75451F]">*</span>
                     </label>
                     <textarea
                       rows={5}
                       placeholder="Share project details, team info, or internship scope..."
                       {...register('message', { required: 'Message cannot be empty' })}
-                      className={`w-full px-4 py-3 rounded-xl bg-bg-900 border text-text placeholder-text-muted/50 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none ${
-                        errors.message ? 'border-red-500/70' : 'border-border'
+                      className={`w-full px-4 py-3 rounded-xl bg-[#FAF6EF] border text-[#44372E] placeholder-[#806F60]/50 text-sm focus:outline-none focus:border-[#75451F] focus:ring-1 focus:ring-[#B9875B] transition-colors resize-none ${
+                        errors.message ? 'border-red-500/70' : 'border-[#D8C1A8]'
                       }`}
                     />
                     {errors.message && (
-                      <p className="text-xs text-red-400 mt-1 font-mono">{errors.message.message}</p>
+                      <p className="text-xs text-red-600 mt-1 font-mono">{errors.message.message}</p>
                     )}
                   </div>
 
                   {/* Feedback notices */}
                   {status === 'success' && (
-                    <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30 flex items-center gap-3 text-green-300 text-sm font-sans animate-fadeIn">
-                      <CheckCircle2 size={18} className="text-green-400 flex-shrink-0" />
+                    <div className="p-4 rounded-xl bg-[#EFE3D3] border border-[#B9875B]/50 flex items-center gap-3 text-[#54351F] text-sm font-sans animate-fadeIn">
+                      <CheckCircle2 size={18} className="text-[#75451F] flex-shrink-0" />
                       <span>Thank you! Your message has been sent. Kajal will get back to you shortly.</span>
                     </div>
                   )}
 
                   {status === 'error' && (
-                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center gap-3 text-red-300 text-sm font-sans">
-                      <AlertCircle size={18} className="text-red-400 flex-shrink-0" />
+                    <div className="p-4 rounded-xl bg-red-100 border border-red-300 flex items-center gap-3 text-red-800 text-sm font-sans">
+                      <AlertCircle size={18} className="text-red-600 flex-shrink-0" />
                       <span>{errorMessage || 'There was an issue sending your message. Please reach out via email directly.'}</span>
                     </div>
                   )}

@@ -7,18 +7,18 @@ import { Reveal } from '../components/ui/Reveal';
 import { Code2, Brain, Sparkles, Terminal, Database, Activity } from 'lucide-react';
 
 const categoryIcons: Record<string, React.ReactNode> = {
-  'Programming Languages': <Code2 size={18} className="text-accent" />,
-  'ML & Data Science': <Brain size={18} className="text-accent-2" />,
-  'Generative AI & RAG': <Sparkles size={18} className="text-[#38E1FF]" />,
-  'Tools & Deployment': <Terminal size={18} className="text-accent" />,
-  'Databases': <Database size={18} className="text-accent-2" />,
-  'Computational Research': <Activity size={18} className="text-accent" />,
+  'Programming Languages': <Code2 size={18} className="text-[#75451F]" />,
+  'ML & Data Science': <Brain size={18} className="text-[#B9875B]" />,
+  'Generative AI & RAG': <Sparkles size={18} className="text-[#75451F]" />,
+  'Tools & Deployment': <Terminal size={18} className="text-[#B9875B]" />,
+  'Databases': <Database size={18} className="text-[#75451F]" />,
+  'Computational Research': <Activity size={18} className="text-[#B9875B]" />,
 };
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-24 lg:py-32 bg-bg-900 relative overflow-hidden">
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/8 rounded-full blur-[130px] pointer-events-none" />
+    <section id="skills" className="py-24 lg:py-32 bg-[#F5EBDD] relative overflow-hidden">
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#B9875B]/6 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
@@ -36,11 +36,11 @@ export const Skills: React.FC = () => {
               <Card className="h-full flex flex-col justify-between !p-6 group">
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border/60">
-                    <div className="w-9 h-9 rounded-lg bg-surface-2 border border-border flex items-center justify-center group-hover:scale-110 transition-transform">
-                      {categoryIcons[group.category] || <Code2 size={18} className="text-accent" />}
+                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-[#D8C1A8]/60">
+                    <div className="w-9 h-9 rounded-lg bg-[#FAF6EF] border border-[#D8C1A8] flex items-center justify-center group-hover:scale-110 group-hover:border-[#B9875B] transition-transform shadow-xs">
+                      {categoryIcons[group.category] || <Code2 size={18} className="text-[#75451F]" />}
                     </div>
-                    <h3 className="font-heading font-bold text-base text-text group-hover:text-accent transition-colors">
+                    <h3 className="font-heading font-bold text-base text-[#54351F] group-hover:text-[#75451F] transition-colors">
                       {group.category}
                     </h3>
                   </div>
@@ -51,7 +51,7 @@ export const Skills: React.FC = () => {
                       <Chip
                         key={skill}
                         variant="default"
-                        className="py-1 px-3 text-xs font-mono font-medium hover:border-accent hover:text-white"
+                        className="py-1 px-3 text-xs font-mono font-medium"
                       >
                         {skill}
                       </Chip>
@@ -59,9 +59,9 @@ export const Skills: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-border/30 flex items-center justify-between text-[11px] font-mono text-text-muted">
+                <div className="pt-4 mt-4 border-t border-[#D8C1A8]/40 flex items-center justify-between text-[11px] font-mono text-[#806F60]">
                   <span>{group.skills.length} competencies</span>
-                  <span className="text-accent/80">● active</span>
+                  <span className="text-[#75451F] font-semibold">● applied</span>
                 </div>
               </Card>
             </Reveal>

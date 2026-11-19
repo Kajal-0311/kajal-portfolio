@@ -26,7 +26,7 @@ export const App: React.FC = () => {
   const activeSection = useScrollSpy(sectionIds, 120);
 
   return (
-    <div className="min-h-screen bg-bg-900 text-text font-sans selection:bg-accent selection:text-white">
+    <div className="min-h-screen bg-[#F5EBDD] text-[#44372E] font-sans selection:bg-[#B9875B] selection:text-white">
       {/* Sticky Blurred Navbar */}
       <Navbar activeSection={activeSection} />
 
