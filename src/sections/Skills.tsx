@@ -17,10 +17,10 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#B9875B]/6 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
           <SectionHeading
             label="TOOLBOX"
@@ -30,28 +30,28 @@ export const Skills: React.FC = () => {
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {portfolioData.skillGroups.map((group: SkillGroup, idx: number) => (
             <Reveal key={group.category} delay={idx * 0.07} yOffset={20}>
-              <Card className="h-full flex flex-col justify-between !p-6 group">
+              <Card className="h-full flex flex-col justify-between !p-4 sm:!p-6 group">
                 <div>
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-5 pb-3 border-b border-[#D2BFA6]/60">
-                    <div className="w-9 h-9 rounded-lg bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center group-hover:scale-110 group-hover:border-[#B9875B] transition-transform shadow-xs">
-                      {categoryIcons[group.category] || <Code2 size={18} className="text-[#75451F]" />}
+                  <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-5 pb-2.5 sm:pb-3 border-b border-[#D2BFA6]/60">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center group-hover:scale-110 group-hover:border-[#B9875B] transition-transform shadow-xs">
+                      {categoryIcons[group.category] || <Code2 size={16} className="text-[#75451F]" />}
                     </div>
-                    <h3 className="font-heading font-bold text-base text-[#54351F] group-hover:text-[#75451F] transition-colors">
+                    <h3 className="font-heading font-bold text-sm sm:text-base text-[#54351F] group-hover:text-[#75451F] transition-colors">
                       {group.category}
                     </h3>
                   </div>
 
                   {/* Chips Cluster */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {group.skills.map((skill) => (
                       <Chip
                         key={skill}
                         variant="default"
-                        className="py-1 px-3 text-xs font-mono font-medium"
+                        className="py-0.5 sm:py-1 px-2.5 sm:px-3 text-[11px] sm:text-xs font-mono font-medium"
                       >
                         {skill}
                       </Chip>
@@ -59,7 +59,7 @@ export const Skills: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-[#D2BFA6]/40 flex items-center justify-between text-[11px] font-mono text-[#806F60]">
+                <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-[#D2BFA6]/40 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#806F60]">
                   <span>{group.skills.length} competencies</span>
                   <span className="text-[#75451F] font-semibold">● applied</span>
                 </div>

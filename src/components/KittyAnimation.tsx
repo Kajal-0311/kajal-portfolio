@@ -480,7 +480,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
     <div
       ref={containerRef}
       aria-label={`Persian Kittens Animation for ${sectionName}`}
-      className={`relative w-full overflow-hidden select-none py-6 sm:py-8 mt-10 sm:mt-12 border-t border-[#D2BFA6]/40 ${className}`}
+      className={`relative w-full overflow-hidden select-none py-5 sm:py-8 mt-8 sm:mt-12 border-t border-[#D2BFA6]/40 ${className}`}
     >
       {/* Subtle Dappled Sunlight dots */}
       <div className="absolute inset-0 bg-[radial-gradient(#D2BFA6_1.5px,transparent_1.5px)] [background-size:20px_20px] opacity-15 pointer-events-none" />
@@ -488,21 +488,21 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
       {/* Runway Guideline */}
       <div className="absolute bottom-4 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-[#D2BFA6]/60 to-transparent pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-8 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-8 relative z-10">
         {/* Subtle Minimal Signature Header with Controls */}
-        <div className="flex items-center justify-between gap-2 mb-2">
+        <div className="flex items-center justify-between gap-1.5 sm:gap-2 mb-2">
           {/* Subtle badge */}
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F2E7D8]/80 border border-[#D2BFA6]/60 text-[11px] font-mono text-[#75451F]">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F2E7D8]/80 border border-[#D2BFA6]/60 text-[10px] sm:text-[11px] font-mono text-[#75451F]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B9875B] animate-pulse" />
             <span className="font-semibold text-[#54351F]">Milo & Bella</span>
             <span className="text-[#806F60] hidden sm:inline">• Persian Kittens</span>
           </div>
 
           {/* Minimal Controls */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1 sm:gap-1.5">
             <button
               onClick={() => setIsPaused(!isPaused)}
-              className={`p-1.5 rounded-md border text-[11px] font-mono transition-all flex items-center gap-1 cursor-pointer ${
+              className={`p-1.5 sm:px-2 rounded-md border text-[10px] sm:text-[11px] font-mono transition-all flex items-center justify-center gap-1 cursor-pointer min-w-[28px] min-h-[28px] ${
                 !isPaused
                   ? 'bg-[#F2E7D8]/80 border-[#D2BFA6] text-[#54351F] hover:bg-[#F2E7D8]'
                   : 'bg-[#B9875B] border-[#75451F] text-white'
@@ -516,7 +516,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
 
             <button
               onClick={toggleSound}
-              className={`p-1.5 rounded-md border text-[11px] font-mono transition-all flex items-center gap-1 cursor-pointer ${
+              className={`p-1.5 sm:px-2 rounded-md border text-[10px] sm:text-[11px] font-mono transition-all flex items-center justify-center gap-1 cursor-pointer min-w-[28px] min-h-[28px] ${
                 soundEnabled
                   ? 'bg-[#F2E7D8]/80 border-[#B9875B] text-[#75451F]'
                   : 'bg-[#EDE0CC]/80 border-[#D2BFA6] text-[#806F60]'
@@ -534,7 +534,7 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
 
             <button
               onClick={handleReplay}
-              className="p-1.5 rounded-md bg-[#F2E7D8]/80 border border-[#D2BFA6] hover:border-[#B9875B] text-[#54351F] hover:text-[#75451F] transition-all text-[11px] font-mono flex items-center gap-1 cursor-pointer"
+              className="p-1.5 sm:px-2 rounded-md bg-[#F2E7D8]/80 border border-[#D2BFA6] hover:border-[#B9875B] text-[#54351F] hover:text-[#75451F] transition-all text-[10px] sm:text-[11px] font-mono flex items-center justify-center gap-1 cursor-pointer min-w-[28px] min-h-[28px]"
               title="Replay from corners"
               aria-label="Replay kittens animation"
             >
@@ -544,8 +544,8 @@ export const KittyAnimation: React.FC<KittyAnimationProps> = ({
           </div>
         </div>
 
-        {/* Kittens Playground Stage (Height: 90px) */}
-        <div className="relative w-full h-[90px] sm:h-[95px] overflow-hidden flex items-end pb-1">
+        {/* Kittens Playground Stage */}
+        <div className="relative w-full h-[88px] sm:h-[95px] overflow-hidden flex items-end pb-1">
           {/* Subtle center marker heart */}
           <div className="absolute left-1/2 -translate-x-1/2 bottom-2 pointer-events-none opacity-30">
             <Heart size={12} className="text-[#B9875B] fill-[#B9875B]/30" />

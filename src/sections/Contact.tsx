@@ -72,11 +72,11 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-[#E8DAC5] relative overflow-hidden">
       {/* Background warm caramel glow */}
       <div className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-[#B9875B]/8 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         <Reveal yOffset={20}>
           <SectionHeading
             label="GET IN TOUCH"
@@ -86,24 +86,24 @@ export const Contact: React.FC = () => {
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14">
           {/* Left Column: Direct Info & Socials */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <Reveal yOffset={20}>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Email card */}
                 <a
                   href={`mailto:${portfolioData.profile.email}`}
-                  className="flex items-start gap-4 p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
+                  className="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
-                    <Mail size={20} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
+                    <Mail size={18} className="sm:w-5 sm:h-5" />
                   </div>
-                  <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-[#806F60]">
+                  <div className="min-w-0 flex-1">
+                    <span className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-[#806F60]">
                       Email Directly
                     </span>
-                    <p className="font-sans font-semibold text-[#54351F] text-sm sm:text-base group-hover:text-[#75451F] transition-colors mt-0.5 break-all">
+                    <p className="font-sans font-semibold text-[#54351F] text-xs sm:text-base group-hover:text-[#75451F] transition-colors mt-0.5 break-all">
                       {portfolioData.profile.email}
                     </p>
                   </div>
@@ -112,48 +112,48 @@ export const Contact: React.FC = () => {
                 {/* Phone card */}
                 <a
                   href={`tel:${portfolioData.profile.phone.replace(/[^0-9+]/g, '')}`}
-                  className="flex items-start gap-4 p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
+                  className="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6] hover:border-[#B9875B] hover:shadow-[0_10px_25px_rgba(84,53,31,0.08)] transition-all group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
-                    <Phone size={20} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#75451F] group-hover:scale-110 group-hover:bg-[#75451F] group-hover:text-white transition-all flex-shrink-0 shadow-xs">
+                    <Phone size={18} className="sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-[#806F60]">
+                    <span className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-[#806F60]">
                       Phone Number
                     </span>
-                    <p className="font-sans font-semibold text-[#54351F] text-sm sm:text-base group-hover:text-[#75451F] transition-colors mt-0.5">
+                    <p className="font-sans font-semibold text-[#54351F] text-xs sm:text-base group-hover:text-[#75451F] transition-colors mt-0.5">
                       {portfolioData.profile.phone}
                     </p>
                   </div>
                 </a>
 
                 {/* Location card */}
-                <div className="flex items-start gap-4 p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6]">
-                  <div className="w-12 h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#B9875B] flex-shrink-0 shadow-xs">
-                    <MapPin size={20} />
+                <div className="flex items-start gap-3.5 sm:gap-4 p-4 sm:p-5 rounded-card bg-[#F2E7D8] border border-[#D2BFA6]">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#EDE0CC] border border-[#D2BFA6] flex items-center justify-center text-[#B9875B] flex-shrink-0 shadow-xs">
+                    <MapPin size={18} className="sm:w-5 sm:h-5" />
                   </div>
                   <div>
-                    <span className="font-mono text-xs uppercase tracking-wider text-[#806F60]">
+                    <span className="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-[#806F60]">
                       Location
                     </span>
-                    <p className="font-sans font-semibold text-[#54351F] text-sm sm:text-base mt-0.5">
+                    <p className="font-sans font-semibold text-[#54351F] text-xs sm:text-base mt-0.5">
                       {portfolioData.profile.location}
                     </p>
-                    <p className="text-xs text-[#806F60] mt-0.5">Open to Remote & On-Site Internships</p>
+                    <p className="text-[11px] sm:text-xs text-[#806F60] mt-0.5">Open to Remote & On-Site Internships</p>
                   </div>
                 </div>
 
                 {/* Social Profiles */}
-                <div className="pt-4">
-                  <p className="text-xs font-mono uppercase tracking-widest text-[#806F60] mb-3">
+                <div className="pt-2 sm:pt-4">
+                  <p className="text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#806F60] mb-2 sm:mb-3">
                     Professional Profiles
                   </p>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
                     <a
                       href={portfolioData.profile.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2E7D8] border border-[#D2BFA6] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
+                      className="flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#F2E7D8] border border-[#D2BFA6] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
                     >
                       <FaLinkedinIn size={14} className="text-[#75451F] group-hover:text-white" />
                       <span>LinkedIn</span>
@@ -163,7 +163,7 @@ export const Contact: React.FC = () => {
                       href={portfolioData.profile.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2E7D8] border border-[#D2BFA6] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
+                      className="flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#F2E7D8] border border-[#D2BFA6] text-xs font-mono font-medium text-[#54351F] hover:text-white hover:border-[#75451F] hover:bg-[#75451F] transition-all shadow-xs"
                     >
                       <FaGithub size={14} className="text-[#54351F] group-hover:text-white" />
                       <span>GitHub</span>
@@ -178,7 +178,7 @@ export const Contact: React.FC = () => {
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
             <Reveal yOffset={20}>
-              <Card className="!p-6 sm:!p-8">
+              <Card className="!p-5 sm:!p-8">
                 <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#54351F] mb-2">
                   Send a Message
                 </h3>

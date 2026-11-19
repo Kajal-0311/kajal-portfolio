@@ -29,6 +29,18 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const handleLinkClick = (href: string) => {
     setMobileMenuOpen(false);
     const targetElement = document.querySelector(href);
@@ -42,11 +54,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#EDE0CC]/92 backdrop-blur-md border-b border-[#D2BFA6]/80 shadow-[0_4px_20px_rgba(84,53,31,0.06)] py-3.5'
-            : 'bg-transparent py-5'
+            ? 'bg-[#EDE0CC]/92 backdrop-blur-md border-b border-[#D2BFA6]/80 shadow-[0_4px_20px_rgba(84,53,31,0.06)] py-3 sm:py-3.5'
+            : 'bg-transparent py-4 sm:py-5'
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
@@ -116,12 +128,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-[#EDE0CC]/98 backdrop-blur-xl transition-all duration-300 md:hidden flex flex-col justify-between p-8 pt-24 ${
+        className={`fixed inset-0 z-40 bg-[#EDE0CC]/98 backdrop-blur-xl transition-all duration-300 md:hidden flex flex-col justify-between p-6 sm:p-8 pt-20 sm:pt-24 overflow-y-auto max-h-screen ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col gap-3">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#B9875B] mb-2 font-semibold">Navigation</p>
+        <div className="flex flex-col gap-2 sm:gap-3">
+          <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#B9875B] mb-1 font-semibold">Navigation</p>
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -132,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className={`flex items-center justify-between text-2xl font-heading font-semibold py-3 border-b border-[#D2BFA6]/50 transition-colors ${
+                className={`flex items-center justify-between text-xl sm:text-2xl font-heading font-semibold py-2.5 sm:py-3 border-b border-[#D2BFA6]/50 transition-colors ${
                   isActive ? 'text-[#75451F]' : 'text-[#54351F] hover:text-[#75451F]'
                 }`}
               >
@@ -143,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           })}
         </div>
 
-        <div className="pt-6 border-t border-[#D2BFA6] flex flex-col gap-3">
+        <div className="pt-6 mt-4 border-t border-[#D2BFA6] flex flex-col gap-3">
           <Button
             variant="primary"
             size="md"
@@ -153,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           >
             Let's Talk
           </Button>
-          <p className="text-center text-xs text-[#806F60] font-mono">
+          <p className="text-center text-xs text-[#806F60] font-mono break-all">
             {portfolioData.profile.email}
           </p>
         </div>
