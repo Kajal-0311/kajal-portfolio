@@ -10,6 +10,7 @@ import { Experience } from './sections/Experience';
 import { Skills } from './sections/Skills';
 import { Certifications } from './sections/Certifications';
 import { Contact } from './sections/Contact';
+import { PersianCatsPlayground } from './components/PersianCatsPlayground';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -42,6 +43,9 @@ export const App: React.FC = () => {
         <Certifications />
         <Contact />
       </main>
+
+      {/* Playful Persian Beige Kittens (Just above footer) */}
+      <PersianCatsPlayground />
 
       {/* Footer */}
       <Footer />

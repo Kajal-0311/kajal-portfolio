@@ -38,8 +38,8 @@ export const TechMarquee: React.FC = () => {
   return (
     <div className="w-full bg-[#E8DAC5] border-y border-[#D2BFA6] py-5 overflow-hidden backdrop-blur-sm relative group">
       {/* Edge gradient masks for smooth fade-in and fade-out */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-[#EDE0CC] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-[#EDE0CC] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-[#E8DAC5] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-[#E8DAC5] to-transparent z-10 pointer-events-none" />
 
       <div className="flex w-max animate-marquee hover:[animation-play-state:paused] items-center gap-6 sm:gap-10">
         {marqueeItems.map((tech, idx) => (
